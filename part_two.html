@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Cruz Only Swung For The Fences</title>
+    <link rel="stylesheet" href="part_two.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <section class="container">
+        <div class="contentC">
+            <p>Part 2</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentN">
+            <p>Here comes the second pitch, which Cruz fouls off. 1-1.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE2">
+            <p>Statistically, it is unlikely for Cornell to win this game. 
+                There have been 53 total MLB games that at one point featured this exact 
+                situation (11th inning, one out, runner on first, visitor up by one, 1-1 count).</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE2">
+            <p>43 of them were won by the visitor (Dartmouth, in this case). 
+                That’s a 19% win percentage for Cornell. </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentN">
+            <p>But unlikeliness is what defines Chris Cruz.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE">
+            <p>In his three seasons recorded in baseballR, he was a continually sub-par hitter.
+                 His batting average in 2012 was 0.258, a touch below the average for all hitters
+                  with more than 70 at-bats in a season (0.262). But what Cruz lacked in batting 
+                  average, he made up for in Slugging Percentage, which weighs extra-base hits more 
+                  heavily. </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentW2">
+            <p>Here, in the quadrant defined by low batting averages and high slugging percentages, 
+                Cruz stands alone. Though below average at batting, when Cruz does indeed hit the ball, 
+                he hits it extremely well.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE">
+            <p>In fact, his extra-base hitting is so good that it is second in Cornell history since 2012, 
+                bested only by his teammate on first, Brian Billigen.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentC">
+            <p><a href="part_three.html">Click to go to Part 3</a> </p>
+        </div>
+    </section>
+
+    <!--<div id="set-height"></div>-->
+
+    <video id="v0" tabindex="0" , autobuffer, preload>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="part_two.mp4">
+        </source>
+    </video>
+
+    <script>
+
+        var frameNumber = 0, // start video at frame 0
+            // lower numbers = faster playback
+            playbackConst = 500,
+            // get page height from video duration
+            setHeight = document.getElementById("set-height"),
+            // select video element         
+            vid = document.getElementById('v0');
+        // var vid = $('#v0')[0]; // jquery option
+
+        // dynamically set the page height according to video length
+        vid.addEventListener('loadedmetadata', function () {
+            setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+        });
+
+
+        // Use requestAnimationFrame for smooth playback
+        function scrollPlay() {
+            var frameNumber = window.pageYOffset / playbackConst;
+            vid.currentTime = frameNumber;
+            window.requestAnimationFrame(scrollPlay);
+        }
+
+        window.requestAnimationFrame(scrollPlay);
+
+    </script>
+</body>
+
+</html>
