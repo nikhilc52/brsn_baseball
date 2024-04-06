@@ -1,6 +1,7 @@
 # BRSN Baseball Article
 
 All the files used in the creation of the article "title".
+Article link: https://nikhilc52.github.io/brsn_baseball/part_one.html
 
 ## Built with
 
