@@ -1,4 +1,4 @@
-# BRSN Baseball
+# BRSN Baseball Article
 
 All the files used in the creation of the article "title".
 
