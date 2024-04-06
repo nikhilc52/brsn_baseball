@@ -1,0 +1,212 @@
+body{
+    background-color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 3em;
+}
+
+#v0{
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    top: 1%;
+    left: 1%;
+    width: 95%;
+}
+
+#set-height{
+    display: block;
+}
+
+section{
+    z-index: 1;
+    position: relative;
+}
+
+.contentC{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+}
+
+.contentN{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 20%;
+    text-align: center;
+}
+
+.contentE{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 40%;
+    left: 50%;
+    top: 65%;
+    text-align: center;
+}
+
+.contentE2{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 20%;
+    left: 80%;
+    top: 50%;
+    text-align: center;
+}
+
+.contentW{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 40%;
+    right: 50%;
+    top: 65%;
+    text-align: center;
+}
+
+.contentW2{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 40%;
+    right: 50%;
+    top: 25%;
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    background: #fff;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+
+p { font-size: 1.5em; }
+
+/*Scroll*/
+section:nth-of-type(1) {
+    height: 800px;
+}
+/*Nikhil Chinchalkar*/
+section:nth-of-type(2) {
+    height: 500px;
+}
+/*Title*/
+section:nth-of-type(3) {
+    height: 500px;
+}
+/*Subtitle*/
+section:nth-of-type(4) {
+    height: 1000px;
+}
+/*Date*/
+section:nth-of-type(5) {
+    height: 1000px;
+}
+/*Stake*/
+section:nth-of-type(6) {
+    height: 3000px;
+}
+/*Attendance*/
+section:nth-of-type(7) {
+    height: 5000px;
+}
+/*Back*/
+section:nth-of-type(8) {
+    height: 2000px;
+}
+/*1-0*/
+section:nth-of-type(9) {
+    height: 2700px;
+}
+/*Pressure*/
+section:nth-of-type(10) {
+    height: 2000px;
+}
+/*Context*/
+section:nth-of-type(11) {
+    height: 1900px;
+}
+/*Additional Context*/
+section:nth-of-type(12) {
+    height: 4000px;
+}
+/*Do Or Die*/
+section:nth-of-type(13) {
+    height: 6000px;
+}
+/*1-1*/
+section:nth-of-type(14) {
+    height: 5000px;
+}
+/*Simulation Empty*/
+section:nth-of-type(15) {
+    height: 5000px;
+}
+/*Simulation Reveal*/
+section:nth-of-type(16) {
+    height: 4175px;
+}
+/*Unlikliness*/
+section:nth-of-type(17) {
+    height: 2000px;
+}
+/*Describing*/
+section:nth-of-type(18) {
+    height: 5000px;
+}
+/*Quadrant*/
+section:nth-of-type(19) {
+    height: 4000px;
+}
+/*Slugging Bar*/
+section:nth-of-type(20) {
+    height: 17000px;
+}
+/*2-1*/
+section:nth-of-type(21) {
+    height: 4500px;
+}
+/*Zone*/
+section:nth-of-type(22) {
+    height: 1000px;
+}
+/*Home Run BA Scatter*/
+section:nth-of-type(23) {
+    height: 5000px;
+}
+/*Home Run Slugging Scatter*/
+section:nth-of-type(24) {
+    height: 7000px;
+}
+/*HR Hits % Bar*/
+section:nth-of-type(25) {
+    height: 8000px;
+}
+/*HR Hits % Bar Zoom*/
+section:nth-of-type(26) {
+    height: 4000px;
+}
+/*HR AB % Bar*/
+section:nth-of-type(27) {
+    height: 5000px;
+}
+/*Summary*/
+section:nth-of-type(28) {
+    height: 5000px;
+}
+/*Guess*/
+section:nth-of-type(29) {
+    height: 1500px;
+}
+/*Blank*/
+section:nth-of-type(30) {
+    height: 10000px;
+}
+/*Signoff*/
+section:nth-of-type(31) {
+    height: 1000px;
+}
