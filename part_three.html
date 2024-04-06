@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 3</title>
+    <link rel="stylesheet" href="part_three.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <section class="container">
+        <div class="contentC">
+            <p>Part 3</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentN">
+            <p>The third pitch.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentN">
+            <p>Well outside the zone. 2-1.
+            </p>
+        </div>
+    </section>
+    
+    <section class="container">
+        <div class="contentE">
+            <p>Of course, the best hit you can get off a ball is a home run, which Cruz did better 
+                than anybody else. Once again, his batting average was below the norm, but the power 
+                he possessed with his bat separated him from the rest of the competition.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentW2">
+            <p>Here’s another look at his hitting, this time comparing slugging and home runs hit in a single season. 
+                Cruz, in 2012, is miles ahead of the rest.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE">
+            <p>Perhaps the most damning charts are these, which measures how often a player hits 
+                a homerun, given by the percent of hits that are home runs.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE">
+            <p>Cruz not only holds the top spot, but also the second. 
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE">
+            <p>Finally, in any given plate appearance, Cruz leads all players since 2012 for the 
+                highest likelihood to hit a homerun, plus, leading up to this moment, Cruz was 
+                one-shy of the Cornell single-seasons home run record - his success was historic.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentC">
+            <p><a href="part_four.html">Click to go to Part 4</a> </p>
+        </div>
+    </section>
+
+    <!--<div id="set-height"></div>-->
+
+    <video id="v0" tabindex="0" , autobuffer, preload>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="part_three.mp4">
+        </source>
+    </video>
+
+    <script>
+
+        var frameNumber = 0, // start video at frame 0
+            // lower numbers = faster playback
+            playbackConst = 500,
+            // get page height from video duration
+            setHeight = document.getElementById("set-height"),
+            // select video element         
+            vid = document.getElementById('v0');
+        // var vid = $('#v0')[0]; // jquery option
+
+        // dynamically set the page height according to video length
+        vid.addEventListener('loadedmetadata', function () {
+            setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+        });
+
+
+        // Use requestAnimationFrame for smooth playback
+        function scrollPlay() {
+            var frameNumber = window.pageYOffset / playbackConst;
+            vid.currentTime = frameNumber;
+            window.requestAnimationFrame(scrollPlay);
+        }
+
+        window.requestAnimationFrame(scrollPlay);
+
+    </script>
+</body>
+
+</html>

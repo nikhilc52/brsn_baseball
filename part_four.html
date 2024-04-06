@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 4</title>
+    <link rel="stylesheet" href="part_four.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <section class="container">
+        <div class="contentC">
+            <p>Part 4</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentN">
+            <p>	As a reflection of the numbers on Cruz’s batting average, he was 0 for 4 leading up to 
+                this moment in the 11th. But getting consistent hits was never his specialty. Cruz was 
+                swinging for the fences every single time, he lived and died by big swings. So, down one, 
+                in the most do or die situation imaginable, needing a homerun, Cruz is the best person in 
+                recent Cornell baseball history to send up to bat. 
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentC">
+            <p>With the championship on the line, you can probably guess what happens next.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentE2">
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contentC">
+            <h6>Nikhil Chinchalkar<br>2024</h6>
+        </div>
+    </section>
+
+    <!--<div id="set-height"></div>-->
+
+    <video id="v0" tabindex="0" , autobuffer, preload>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="part_four.mp4">
+        </source>
+    </video>
+
+    <script>
+
+        var frameNumber = 0, // start video at frame 0
+            // lower numbers = faster playback
+            playbackConst = 500,
+            // get page height from video duration
+            setHeight = document.getElementById("set-height"),
+            // select video element         
+            vid = document.getElementById('v0');
+        // var vid = $('#v0')[0]; // jquery option
+
+        // dynamically set the page height according to video length
+        vid.addEventListener('loadedmetadata', function () {
+            setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+        });
+
+
+        // Use requestAnimationFrame for smooth playback
+        function scrollPlay() {
+            var frameNumber = window.pageYOffset / playbackConst;
+            vid.currentTime = frameNumber;
+            window.requestAnimationFrame(scrollPlay);
+        }
+
+        window.requestAnimationFrame(scrollPlay);
+
+    </script>
+</body>
+
+</html>
