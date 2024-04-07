@@ -21,5 +21,5 @@ All the files used in the creation of the article "title". Article link: [https:
 
 ## Acknowledgments
 
-* Thank you to BRSN for the platform
+* BRSN for the publishing platform
 * Inspiration from Secret Base's Chart Party
