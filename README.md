@@ -6,7 +6,7 @@ All the files used in the creation of the article "title". Article link: [https:
 
 * **Blender**: Rendering the background animation
 * **Adobe Premiere Pro**: Editing the background video
-* **R**: Generating the plots used
+* **R Studio**: Generating the plots used
 * **Excel**: Organizing the data used in R
 * **Visual Studio Code**: Writing HTML, JS, and CSS code to build the site
 
