@@ -8,7 +8,7 @@ All the files used in the creation of the article. Article link: [https://nikhil
 * **Adobe Premiere Pro**: Editing the background video
 * **R Studio**: Generating the plots used
 * **Excel**: Organizing the data used in R
-* **Visual Studio Code**: Writing HTML, JS, and CSS code to build the site
+* **Visual Studio Code**: Writing HTML, CSS, and JS code to build the site
 
 ## Resources used
 
