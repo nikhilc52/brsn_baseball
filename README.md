@@ -23,7 +23,7 @@ All the files used in the creation of the article. Article link: [https://nikhil
 ## Acknowledgments
 
 * BRSN for the publishing platform
-* Inspiration from Secret Base's Chart Party
+* Secret Base's Chart Party for inspiration
 * Eric Guo for editing
 * Michaela Chan for editing
 * [Name Here] for publication help
