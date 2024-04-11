@@ -1,0 +1,146 @@
+body{
+    background-color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 3em;
+}
+
+#v0{
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    top: 1%;
+    left: 1%;
+    width: 95%;
+}
+
+#set-height{
+    display: block;
+}
+
+section{
+    z-index: 1;
+    position: relative;
+}
+
+.contentC{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+}
+
+.contentN{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 20%;
+    text-align: center;
+}
+
+.contentE{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 40%;
+    left: 50%;
+    top: 65%;
+    text-align: center;
+}
+
+.contentE2{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 20%;
+    left: 80%;
+    top: 50%;
+    text-align: center;
+}
+
+.contentW{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 40%;
+    right: 50%;
+    top: 65%;
+    text-align: center;
+}
+
+.contentW2{
+    position: sticky;
+    position: -webkit-sticky;
+    width: 40%;
+    right: 50%;
+    top: 25%;
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    background: #fff;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+
+p { font-size: 1.5em; }
+
+a { color: inherit; } 
+
+/*Scroll*/
+section:nth-of-type(1) {
+    height: 800px;
+}
+/*Nikhil Chinchalkar*/
+section:nth-of-type(2) {
+    height: 500px;
+}
+/*Title*/
+section:nth-of-type(3) {
+    height: 500px;
+}
+/*Subtitle*/
+section:nth-of-type(4) {
+    height: 1000px;
+}
+/*Date*/
+section:nth-of-type(5) {
+    height: 1000px;
+}
+/*Stake*/
+section:nth-of-type(6) {
+    height: 3000px;
+}
+/*Attendance*/
+section:nth-of-type(7) {
+    height: 5000px;
+}
+/*Back*/
+section:nth-of-type(8) {
+    height: 2000px;
+}
+/*1-0*/
+section:nth-of-type(9) {
+    height: 2700px;
+}
+/*Pressure*/
+section:nth-of-type(10) {
+    height: 2000px;
+}
+/*Context*/
+section:nth-of-type(11) {
+    height: 1900px;
+}
+/*Additional Context*/
+section:nth-of-type(12) {
+    height: 4000px;
+}
+/*Do Or Die*/
+section:nth-of-type(13) {
+    height: 3000px;
+}
+/*Chapter 2*/
+section:nth-of-type(14) {
+    height: 1000px;
+}
