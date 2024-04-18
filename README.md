@@ -26,4 +26,4 @@ All the files used in the creation of the article. Article link: [https://nikhil
 * Secret Base's Chart Party for inspiration
 * Eric Guo for editing
 * Michaela Chan for editing
-* [Name Here] for publication help
+* Henry Geller for publication help
