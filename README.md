@@ -25,5 +25,4 @@ All the files used in the creation of the article "Chris Cruz Only Swung For The
 * BRSN for the publishing platform
 * Secret Base's Chart Party for inspiration
 * Eric Guo for editing
-* Michaela Chan for editing
 * Henry Geller for publication help
