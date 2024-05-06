@@ -26,3 +26,4 @@ All the files used in the creation of the article "Chris Cruz Only Swung For The
 * Secret Base's Chart Party for inspiration
 * Eric Guo for editing
 * Henry Geller for publication help
+* Michel Anders for the model template
