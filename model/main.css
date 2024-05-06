@@ -8,7 +8,8 @@ body {
 }
 
 a {
-	color:white;
+	color: #ff0;
+	text-decoration: none;
 }
 
 a:hover {
@@ -34,19 +35,9 @@ canvas {
 	z-index: 1; /* TODO Solve this in HTML */
 }
 
-#footer {
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-	text-align: center;
-	z-index: 1; /* TODO Solve this in HTML */
-}
-
-#credits { justify-content: center; }
+#credits { float:right; width:30%; }
 #modelinfo { float:right; width:30%; }
-#instructions {justify-content: center;}
+#instructions { float:right; width:30%; }
 
 .dg.ac {
 	z-index: 2 !important; /* TODO Solve this in HTML */
