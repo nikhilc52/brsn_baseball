@@ -1,167 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Model</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
-		<link rel="icon" type="image/png" href="../logo.png">
-	</head>
 
-	<body>
-		<div id="info">
-			<div id="instructions" style="font-family: Arial, Helvetica, sans-serif; font-size: medium;">Use Mousebuttons To
-				Navigate</div>
-		</div>
-	
-		<div id="footer">
-			<div id="credits" style="font-family: Arial, Helvetica, sans-serif; font-size: medium;"><a
-					href="https://github.com/varkenvarken/blenderaddons" target="_blank">Credit</a></div>
-		</div>
+<head>
+	<title>Model</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="main.css">
+	<link rel="icon" type="image/png" href="../logo.png">
+</head>
 
-		<script type="module">
+<body>
 
-			import * as THREE from './build/three.module.js';
+	<table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: normal;">Scroll To Zoom</h3>
+            </td>
+            <td>
+                <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: normal;">Click + Drag To Rotate</h3>
+            </td>
+            <td>
+                <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: normal;">Shift + Click + Drag To Move</h3>
+            </td>
+        </tr>
+    </table>
 
-			import Stats from './modules/jsm/libs/stats.module.js';
+	<div id="footer">
+		<div id="credits" style="font-family: Arial, Helvetica, sans-serif; font-size: medium;"><a
+				href="https://github.com/varkenvarken/blenderaddons" target="_blank">Credit</a></div>
+	</div>
 
-			import { OrbitControls } from './modules/jsm/controls/OrbitControls.js';
-			import { GLTFLoader } from './modules/jsm/loaders/GLTFLoader.js';
-			import { RGBELoader } from './modules/jsm/loaders/RGBELoader.js';
-			import { DDSLoader } from './modules/jsm/loaders/DDSLoader.js';
-			import { DRACOLoader } from './modules/jsm/loaders/DRACOLoader.js';
-			import { EquirectangularToCubeGenerator } from './modules/jsm/loaders/EquirectangularToCubeGenerator.js';
-			import { PMREMGenerator } from './modules/jsm/pmrem/PMREMGenerator.js';
-			import { PMREMCubeUVPacker } from './modules/jsm/pmrem/PMREMCubeUVPacker.js';
+	<script type="module">
 
-			var container, stats, controls;
-			var camera, scene, renderer, envmapfile;
+		import * as THREE from './build/three.module.js';
 
-			init();
-			animate();
+		import Stats from './modules/jsm/libs/stats.module.js';
 
-			function init() {
+		import { OrbitControls } from './modules/jsm/controls/OrbitControls.js';
+		import { GLTFLoader } from './modules/jsm/loaders/GLTFLoader.js';
+		import { RGBELoader } from './modules/jsm/loaders/RGBELoader.js';
+		import { DDSLoader } from './modules/jsm/loaders/DDSLoader.js';
+		import { DRACOLoader } from './modules/jsm/loaders/DRACOLoader.js';
+		import { EquirectangularToCubeGenerator } from './modules/jsm/loaders/EquirectangularToCubeGenerator.js';
+		import { PMREMGenerator } from './modules/jsm/pmrem/PMREMGenerator.js';
+		import { PMREMCubeUVPacker } from './modules/jsm/pmrem/PMREMCubeUVPacker.js';
 
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
+		var container, stats, controls;
+		var camera, scene, renderer, envmapfile;
 
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 20 );
-				camera.position.set( - 1.8, 0.9, 2.7 );
+		init();
+		animate();
 
-				scene = new THREE.Scene();
+		function init() {
 
-				envmapfile = '';
+			container = document.createElement('div');
+			document.body.appendChild(container);
 
-				if(envmapfile != ''){
-					new RGBELoader()
-						.setType( THREE.UnsignedByteType )
-						.setPath( 'textures/' )
-						.load( envmapfile, function ( texture ) {
+			camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
+			camera.position.set(- 1.8, 0.9, 2.7);
 
-							var cubeGenerator = new EquirectangularToCubeGenerator( texture, { resolution: 1024 } );
-							cubeGenerator.update( renderer );
+			scene = new THREE.Scene();
 
-							var pmremGenerator = new PMREMGenerator( cubeGenerator.renderTarget.texture );
-							pmremGenerator.update( renderer );
+			envmapfile = '';
 
-							var pmremCubeUVPacker = new PMREMCubeUVPacker( pmremGenerator.cubeLods );
-							pmremCubeUVPacker.update( renderer );
+			if (envmapfile != '') {
+				new RGBELoader()
+					.setType(THREE.UnsignedByteType)
+					.setPath('textures/')
+					.load(envmapfile, function (texture) {
 
-							var envMap = pmremCubeUVPacker.CubeUVRenderTarget.texture;
+						var cubeGenerator = new EquirectangularToCubeGenerator(texture, { resolution: 1024 });
+						cubeGenerator.update(renderer);
 
-							// model
+						var pmremGenerator = new PMREMGenerator(cubeGenerator.renderTarget.texture);
+						pmremGenerator.update(renderer);
 
-							var loader = new GLTFLoader().setPath( './' );
-							DRACOLoader.setDecoderPath( './draco/gltf/' );
-							loader.setDRACOLoader( new DRACOLoader() );
-							loader.setDDSLoader( new DDSLoader() );
-							loader.load( 'model.glb', function ( gltf ) {
+						var pmremCubeUVPacker = new PMREMCubeUVPacker(pmremGenerator.cubeLods);
+						pmremCubeUVPacker.update(renderer);
 
-								gltf.scene.traverse( function ( child ) {
+						var envMap = pmremCubeUVPacker.CubeUVRenderTarget.texture;
 
-									if ( child.isMesh ) {
+						// model
 
-										child.material.envMap = envMap;
+						var loader = new GLTFLoader().setPath('./');
+						DRACOLoader.setDecoderPath('./draco/gltf/');
+						loader.setDRACOLoader(new DRACOLoader());
+						loader.setDDSLoader(new DDSLoader());
+						loader.load('model.glb', function (gltf) {
 
-									}
+							gltf.scene.traverse(function (child) {
 
-								} );
+								if (child.isMesh) {
 
-								scene.add( gltf.scene );
+									child.material.envMap = envMap;
 
-							} );
+								}
 
-							pmremGenerator.dispose();
-							pmremCubeUVPacker.dispose();
+							});
 
-							if(true) { scene.background = cubeGenerator.renderTarget; }
+							scene.add(gltf.scene);
 
-						} );
-				} else {
-					// model
+						});
 
-					var loader = new GLTFLoader().setPath( './' );
-					DRACOLoader.setDecoderPath( './draco/gltf/' );
-					loader.setDRACOLoader( new DRACOLoader() );
-					loader.setDDSLoader( new DDSLoader() );
-					loader.load( 'model.glb', function ( gltf ) {
-						scene.add( gltf.scene );
-						
-						var hemiLight = new THREE.HemisphereLight(0xffffff, 0x999999, 1);
-						hemiLight.position.set( 0, 50, 0 );
-						scene.add( hemiLight );
-						
-						var dirLight = new THREE.DirectionalLight( 0xffffff, 0.6 );
-						dirLight.position.set( -10, 50, 0 );
-					
-						scene.add( dirLight );
-					} );
+						pmremGenerator.dispose();
+						pmremCubeUVPacker.dispose();
 
-				}
+						if (true) { scene.background = cubeGenerator.renderTarget; }
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				renderer.gammaOutput = true;
-				container.appendChild( renderer.domElement );
+					});
+			} else {
+				// model
 
-				renderer.shadowMap.enabled = true;
-				renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+				var loader = new GLTFLoader().setPath('./');
+				DRACOLoader.setDecoderPath('./draco/gltf/');
+				loader.setDRACOLoader(new DRACOLoader());
+				loader.setDDSLoader(new DDSLoader());
+				loader.load('model.glb', function (gltf) {
+					scene.add(gltf.scene);
 
-				controls = new OrbitControls( camera, renderer.domElement );
-				controls.target.set( 0, - 0.2, - 0.2 );
-				controls.update();
+					var hemiLight = new THREE.HemisphereLight(0xffffff, 0x999999, 1);
+					hemiLight.position.set(0, 50, 0);
+					scene.add(hemiLight);
 
-				window.addEventListener( 'resize', onWindowResize, false );
+					var dirLight = new THREE.DirectionalLight(0xffffff, 0.6);
+					dirLight.position.set(-10, 50, 0);
 
-				// stats
-				stats = new Stats();
-				container.appendChild( stats.dom );
+					scene.add(dirLight);
+				});
 
 			}
 
-			function onWindowResize() {
+			renderer = new THREE.WebGLRenderer({ antialias: true });
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.gammaOutput = true;
+			container.appendChild(renderer.domElement);
 
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+			renderer.shadowMap.enabled = true;
+			renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+			controls = new OrbitControls(camera, renderer.domElement);
+			controls.target.set(0, - 0.2, - 0.2);
+			controls.update();
 
-			}
+			window.addEventListener('resize', onWindowResize, false);
 
-			//
+			// stats
+			stats = new Stats();
+			container.appendChild(stats.dom);
 
-			function animate() {
+		}
 
-				requestAnimationFrame( animate );
+		function onWindowResize() {
 
-				renderer.render( scene, camera );
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
 
-				stats.update();
+			renderer.setSize(window.innerWidth, window.innerHeight);
 
-			}
+		}
 
-		</script>
+		//
 
-	</body>
+		function animate() {
+
+			requestAnimationFrame(animate);
+
+			renderer.render(scene, camera);
+
+			stats.update();
+
+		}
+
+	</script>
+
+</body>
+
 </html>
