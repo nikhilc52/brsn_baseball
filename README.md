@@ -15,6 +15,7 @@ All the files used in the creation of the article "Chris Cruz Only Swung For The
 * [BaseballR](https://billpetti.github.io/baseballr/reference/ncaa.html) - library used in R to obtain data
 * [DesignCourse](https://www.youtube.com/watch?v=HiegEfkenXA) - tutorial referenced for site model
 * [Wikipedia](https://en.wikipedia.org/wiki/Ivy_League_baseball_tournament) - reference for historic data
+* [Michel Anders](https://blog.michelanders.nl/2019/07/exporting-a-model-as-standalone-gltf.html) - blender add-on for interactive model
 
 ## Author
 
