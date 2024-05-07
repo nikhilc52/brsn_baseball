@@ -1,6 +1,6 @@
 # BRSN Baseball Article
 
-All the files used in the creation of the article "Chris Cruz Only Swung For The Fences". Article link: [(https://www.cornellbrsn.com/post/baseball)].
+All the files used in the creation of the article "Chris Cruz Only Swung For The Fences". Article link: [https://www.cornellbrsn.com/post/baseball].
 
 ## Built with
 
